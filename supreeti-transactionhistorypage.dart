@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:payments_history/models/transaction.dart';
 import 'package:payments_history/widgets/chart_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 
 class Chart extends StatelessWidget {
   final List<Transaction> transactions;

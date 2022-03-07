@@ -1,0 +1,4 @@
+#Sun Feb 20 23:36:20 IST 2022
+base.0=/home/akanksha/StudioProjects/finfy/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

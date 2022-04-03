@@ -16,8 +16,6 @@ class NumPad extends StatelessWidget {
   DateTime selectedDate = DateTime(2022);
   TextEditingController _dateController = TextEditingController();
 
-
-
   NumPad({
     Key? key,
     this.buttonSize = 70,
@@ -31,7 +29,7 @@ class NumPad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 30, right: 30),
+      margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
       child: Column(
         children: [
           const SizedBox(height: 20),
@@ -80,6 +78,7 @@ class NumPad extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
                     ),
+                    side: const BorderSide(color: Colors.lightBlue),
                   ),
                   onPressed: () {
                     controller.text += "+";
@@ -88,7 +87,6 @@ class NumPad extends StatelessWidget {
                     child: Text(
                       "+",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 30),
                     ),
@@ -104,6 +102,7 @@ class NumPad extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
                     ),
+                    side: const BorderSide(color: Colors.lightBlue),
                   ),
                   onPressed: () {
                     controller.text += "-";
@@ -112,7 +111,6 @@ class NumPad extends StatelessWidget {
                     child: Text(
                       "-",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 30),
                     ),
@@ -146,19 +144,21 @@ class NumPad extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
                     ),
+                    side: const BorderSide(color: Colors.lightBlue),
                   ),
                   onPressed: () {
                     // calculate the whole expression.
                     String exp = controller.text;
                     double res = 0.00;
-                    exp.split(RegExp(r"\+|\-")).forEach((element) {res += double.parse(element);});
+                    exp.split(RegExp(r"\+|\-")).forEach((element) {
+                      res += double.parse(element);
+                    });
                     controller.text = res.toStringAsFixed(2);
                   },
                   child: const Center(
                     child: Text(
                       "=",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 30),
                     ),
@@ -185,10 +185,11 @@ class NumPad extends StatelessWidget {
                 height: 70,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    primary: Colors.white,
+                    primary: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
                     ),
+                    side: const BorderSide(color: Colors.lightBlue),
                   ),
                   onPressed: () {
                     // insert decimal in amount.
@@ -198,7 +199,6 @@ class NumPad extends StatelessWidget {
                     child: Text(
                       ".",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 30),
                     ),
@@ -221,25 +221,31 @@ class NumPad extends StatelessWidget {
               SizedBox(
                   width: 70,
                   height: 70,
-                  child: IconButton(
-                    onPressed: () => delete(),
-                    icon: const Icon(
-                      Icons.backspace,
-                      color:  Colors.red,
-                    ),
-                    iconSize: 30,
-                  )),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.blueAccent)),
+                      child: IconButton(
+                        onPressed: () => delete(),
+                        icon: const Icon(
+                          Icons.backspace,
+                          color: Colors.red,
+                        ),
+                        iconSize: 30,
+                      ))),
               SizedBox(
                   width: 70,
                   height: 70,
-                  child: IconButton(
-                    onPressed: () => onSubmit(),
-                    icon: const Icon(
-                      Icons.done_rounded,
-                      color: Colors.green,
-                    ),
-                    iconSize: 30,
-                  )),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.blueAccent)),
+                      child: IconButton(
+                        onPressed: () => onSubmit(),
+                        icon: const Icon(
+                          Icons.done_rounded,
+                          color: Colors.green,
+                        ),
+                        iconSize: 30,
+                      ))),
             ],
           ),
         ],
@@ -282,7 +288,7 @@ class NumberButton extends StatelessWidget {
           child: Text(
             number.toString(),
             style: const TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 30),
+               color: Colors.blue, fontSize: 30),
           ), //
         ),
       ),
@@ -290,31 +296,33 @@ class NumberButton extends StatelessWidget {
   }
 }
 
-class DateSelect extends StatefulWidget{
+class DateSelect extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _DateSelectState();
   }
-
 }
-class _DateSelectState extends State<DateSelect>{
-   String cur = "05 03\n2022";
+
+class _DateSelectState extends State<DateSelect> {
+  String cur = "05 03\n2022";
   void setDate(String newDate) {
     setState(() {
       cur = newDate;
     });
   }
-   Future<Null> _selectDate(BuildContext context) async {
-     final DateTime? picked = await showDatePicker(
-         context: context,
-         initialDate: DateTime(2022),
-         initialDatePickerMode: DatePickerMode.day,
-         firstDate: DateTime(2015),
-         lastDate: DateTime(2101));
-     if (picked != null) {
-        setDate(DateFormat("d M\ny").format(picked));
-     }
-   }
+
+  Future<Null> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime(2022),
+        initialDatePickerMode: DatePickerMode.day,
+        firstDate: DateTime(2015),
+        lastDate: DateTime(2101));
+    if (picked != null) {
+      setDate(DateFormat("d M\ny").format(picked));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -326,21 +334,19 @@ class _DateSelectState extends State<DateSelect>{
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2),
           ),
+          side: const BorderSide(color: Colors.lightBlue),
         ),
         onPressed: () {
           _selectDate(context);
         },
-        child:  Center(
+        child: Center(
           child: Text(
             cur,
             style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-                fontSize: 18),
+                color: Colors.blue, fontSize: 18),
           ),
         ),
       ),
     );
   }
-
 }

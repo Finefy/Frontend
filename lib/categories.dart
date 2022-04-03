@@ -4,6 +4,6 @@ class Category{
 
   String name;
   Color clr;
-  Icon icon;
-  Category(String categoryName, Color color, Icon categoryIcon) : name = categoryName, clr = color, icon = categoryIcon;
+  Widget icon;
+  Category(String categoryName, Color color, Widget categoryIcon) : name = categoryName, clr = color, icon = categoryIcon;
 }

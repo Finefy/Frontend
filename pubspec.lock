@@ -88,6 +88,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.1"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.1.0"
   http:
     dependency: transitive
     description:
@@ -156,6 +163,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sms:
+    dependency: "direct main"
+    description:
+      name: sms
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.4"
+  sms_receiver:
+    dependency: "direct main"
+    description:
+      name: sms_receiver
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
   source_span:
     dependency: transitive
     description:
@@ -214,4 +235,4 @@ packages:
     version: "2.1.1"
 sdks:
   dart: ">=2.16.0 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.0.0"

@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:finfy/expenses_income.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,12 +7,19 @@ import 'package:email_auth/email_auth.dart';
 import 'package:otp_screen/otp_screen.dart';
 import 'initial_setup.dart';
 
+
+import 'package:sms/sms.dart';
+//import 'package:sms_receiver/sms_receiver.dart';
+
+
 EmailAuth emailAuth = EmailAuth(
   sessionName: "SignUp session",
 );
 
 void main() {
   // emailAuth.config({"server": "", "serverKey": ""}); TODO
+  // SmsReceiver receiver = SmsReceiver();
+  // receiver.onSmsReceived.listen((SmsMessage msg) => print(msg.body));
   runApp(const MyApp());
 }
 
@@ -218,7 +226,8 @@ class LoginPage extends StatelessWidget {
                                   ),
                                   body: SignUp(),
                                   backgroundColor: Colors.white,
-                                )));
+                                )))
+                    ;
                   },
                 )
               ],
@@ -426,8 +435,10 @@ class ChangePassword extends StatelessWidget {
             )),
         Container(
             padding: const EdgeInsets.all(10),
-            child: ElevatedButton( // change password button
-              onPressed: ()=>{}, // todo change password (db related) then move to login screen
+            child: ElevatedButton(
+              // change password button
+              onPressed: () =>
+                  {}, // todo change password (db related) then move to login screen
               child: const Text('Change Password'),
               style: ElevatedButton.styleFrom(
                 primary: Colors.purple.shade500,

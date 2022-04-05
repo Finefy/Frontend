@@ -16,6 +16,7 @@ Step 3: Select the device to run
 Step 4: Open the file in terminal and execute the following command:
 
 flutter run
+
 ![IMG-20220405-WA0057](https://user-images.githubusercontent.com/78138916/161818610-9d4ec1a4-efe8-42ef-a984-894c0dcfe8e2.jpg)
 ![IMG-20220324-WA0010](https://user-images.githubusercontent.com/78138916/161818618-ba795433-149a-4a5e-9c2b-ac08c7199ca2.jpg)
 ![IMG-20220405-WA0052](https://user-images.githubusercontent.com/78138916/161818624-31760a97-e5af-4fb2-b40c-6fd29f559436.jpg)

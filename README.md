@@ -21,5 +21,8 @@ Open the file in terminal and execute the following command:
 
 flutter run
 
+Get to see these screens
+
+![1](https://user-images.githubusercontent.com/78138916/161816893-ec45884f-db74-408c-a857-2c5c4997816b.jpeg)
 
 

@@ -13,8 +13,8 @@ class ProfileScreen extends StatefulWidget {
 class _ProfilePageState extends State<ProfileScreen> {
   TextEditingController _email =
       TextEditingController(text: "supreeti080202@gmail.com");
-  TextEditingController dateOfBirth = TextEditingController(text: "04-19-1992");
-  TextEditingController password = TextEditingController(text: "123456");
+  TextEditingController dateOfBirth = TextEditingController(text: "08-02-2002");
+  TextEditingController password = TextEditingController(text: "qwerty");
   @override
   Widget build(BuildContext context) {
     return Scaffold(

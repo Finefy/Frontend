@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/finefy/budgetapp/BuildConfig.java
- com.finefy.budgetapp.BuildConfig
